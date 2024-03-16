@@ -1,11 +1,25 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./index.module.scss";
 
 const SelectDropDown = (props: any) => {
   const { options, label } = props;
   const [selected, setSelected] = useState();
   const [open, setOpen] = useState(false);
+
+  const handleClickOutside = (event: any) => {
+    const dropdown = document.querySelector(`.${styles.selectDropDown}`);
+    if (dropdown && !dropdown.contains(event.target)) {
+      setOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className={styles.selectDropDown}>
@@ -20,7 +34,7 @@ const SelectDropDown = (props: any) => {
               key={option}
               onClick={() => {
                 setSelected(option);
-                setOpen(!open);
+                setOpen(false);
               }}
               className={selected === option ? styles.selected : ""}
             >
