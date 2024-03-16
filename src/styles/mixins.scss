@@ -1,5 +1,16 @@
+@import "./variables.scss";
+
 @mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@mixin to-rem($attribute, $px-value) {
+  $rem-value: $px-value / 16;
+  #{$attribute}: $rem-value + rem;
+}
+
+@mixin border {
+  border: 1px solid $border-color;
 }
