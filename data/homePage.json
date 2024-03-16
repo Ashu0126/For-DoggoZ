@@ -1,0 +1,16 @@
+{
+  "navbar": {
+    "logo": { "icon": "/svg/logo.svg", "link": "/" },
+    "navTabs": [
+      { "name": "why us", "link": "/" },
+      { "name": "services", "link": "/" },
+      { "name": "contact", "link": "/" }
+    ]
+  },
+  "heroBanner": {
+    "companyName": "ForDoggoZ",
+    "heading": "An Initiative",
+    "subHeading": "We care because you care",
+    "buttons": ["Need help?", "Register as helper"]
+  }
+}

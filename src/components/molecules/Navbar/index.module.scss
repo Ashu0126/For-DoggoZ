@@ -1,0 +1,22 @@
+@import "./../../../styles/mixins.scss";
+
+.navbar {
+  @include flex-center;
+
+  justify-content: space-between;
+  padding: 0rem 5rem;
+
+  .logo {
+    width: 5rem;
+  }
+
+  .navTabs {
+    @include flex-center;
+    gap: 2rem;
+
+    .tab {
+      font-weight: bold;
+      font-size: 1rem;
+    }
+  }
+}
