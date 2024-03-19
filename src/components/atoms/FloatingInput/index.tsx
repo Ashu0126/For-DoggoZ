@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./index.module.scss";
 
 const FloatingInput = (props: any) => {
-  const { label, type = "text" } = props;
+  const { label, type = "text", name } = props;
 
   const [isFocused, setIsFocused] = useState(false);
   const [input, setInput] = useState("");
@@ -25,6 +25,7 @@ const FloatingInput = (props: any) => {
     <div className={styles.floatingLabel}>
       <input
         type={type}
+        name={name}
         onChange={(e) => setInput(e.target.value)}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
