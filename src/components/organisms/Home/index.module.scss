@@ -15,7 +15,7 @@
     height: 80vh;
 
     h1 {
-      font-size: 5rem;
+      font-size: 6rem;
     }
     h3 {
       font-size: 2rem;
@@ -27,7 +27,7 @@
 
     .btnContainer {
       @include flex-center;
-      justify-content: start;
+      justify-content: flex-start;
       gap: 1rem;
     }
   }

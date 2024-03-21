@@ -7,7 +7,7 @@
   input {
     @include border;
     @include to-rem(border-radius, 5);
-    width: 100%;
+    width: calc(100% - 2rem);
     outline: none;
     padding: 1.6rem 1rem 0.75rem;
     font-size: 1rem;
@@ -27,8 +27,7 @@
   }
 
   .active {
-    transform: scale(0.8);
-    top: 0.5rem;
-    left: 0.3rem;
+    font-size: 0.75rem;
+    top: 0.6rem;
   }
 }
