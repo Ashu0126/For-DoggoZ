@@ -14,7 +14,7 @@ const Helper = () => {
       />
       <div className={style.inputSection}>
         <FloatingInput label={"Enter your location"} />
-        <Button>search</Button>
+        <Button>Search</Button>
       </div>
     </div>
   );

@@ -12,7 +12,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 80vh;
+    height: 70vh;
 
     h1 {
       font-size: 6rem;
@@ -53,11 +53,6 @@
       .btnContainer {
         justify-content: center;
         gap: 0.5rem;
-
-        button {
-          font-size: 2.5vmin;
-          padding: 0.5rem 0.75rem;
-        }
       }
     }
   }
