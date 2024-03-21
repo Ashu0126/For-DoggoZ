@@ -1,0 +1,64 @@
+@import "./../../../styles/variables.scss";
+@import "./../../../styles/mixins.scss";
+
+.footer {
+  background-color: #241f21;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 20rem;
+  height: max-content;
+  color: $white;
+  .content {
+    padding: 3rem 5rem;
+    .logo {
+      display: flex;
+      align-items: center;
+      img {
+        width: 3.5rem;
+      }
+      h3 {
+        font-size: 1.5rem;
+      }
+    }
+
+    .aboutUs {
+      padding: 1rem;
+
+      h4 {
+        font-size: 1.1rem;
+      }
+
+      p {
+        max-width: 22rem;
+        width: 100%;
+        font-size: 0.95rem;
+      }
+    }
+  }
+
+  .copyright {
+    padding: 1rem 2rem;
+    font-size: 0.85rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 765px) {
+  .footer {
+    min-height: max-content;
+    .content {
+      padding: 2rem;
+      .logo {
+        h3 {
+          font-size: 1.2rem;
+        }
+      }
+      .aboutUs {
+        p {
+          font-size: 0.85rem;
+        }
+      }
+    }
+  }
+}
