@@ -2,7 +2,6 @@
 @import "./../../../styles/mixins.scss";
 
 .navbar {
-  background-color: $black;
   @include flex-center;
   justify-content: space-between;
   padding: 0 4rem;
@@ -62,7 +61,9 @@
     .navTabs {
       position: fixed;
       height: 100vh;
-      background-color: $black;
+      background-color: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+
       width: 100%;
       top: 0;
       right: -100rem;

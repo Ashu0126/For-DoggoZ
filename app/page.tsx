@@ -1,7 +1,7 @@
-import Navbar from "@/src/components/molecules/Navbar";
+import Home from "@/src/components/organisms/Home";
 
 const Page = () => {
-  return <Navbar />;
+  return <Home />;
 };
 
 export default Page;

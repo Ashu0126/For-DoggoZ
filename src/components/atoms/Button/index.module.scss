@@ -3,9 +3,8 @@
 
 .btn {
   @include to-rem(border-radius, 5);
-
+  @include border;
   font-size: 0.95rem;
   font-weight: 600;
   padding: 0.5rem 1rem;
-  background-color: $white;
 }
