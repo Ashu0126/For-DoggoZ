@@ -1,0 +1,47 @@
+@import "./../../../styles/variables.scss";
+@import "./../../../styles/mixins.scss";
+
+.helperSection {
+  padding: 3rem 5rem;
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.25;
+
+    span {
+      color: $primary-color;
+      font-family: "Protest Revolution", sans-serif;
+      font-size: 3.5rem;
+      margin: 0 0.5rem;
+    }
+  }
+
+  .inputSection {
+    button {
+      margin-top: 1rem;
+      width: max-content;
+    }
+  }
+}
+
+@media (max-width: 765px) {
+  .helperSection {
+    padding: 2rem;
+
+    h2 {
+      font-size: 1.5rem;
+
+      span {
+        font-size: 2rem;
+      }
+    }
+
+    .inputSection {
+      button {
+        width: 100%;
+        font-size: 2.5vmin;
+      }
+    }
+  }
+}
