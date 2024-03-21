@@ -1,12 +1,13 @@
 "use client";
-import Button from "@/src/components/atoms/Button";
-import FloatingInput from "@/src/components/atoms/FloatingInput";
 import style from "./page.module.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { fetchResult } from "@/src/utils/fetchApi";
+import FloatingInput from "@/src/components/atoms/FloatingInput";
+import Button from "@/src/components/atoms/Button";
 
 const Page = () => {
   const [result, setResult] = useState<any>({});
+  const [shift, setShift] = useState(false);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -16,26 +17,51 @@ const Page = () => {
       sector: Number(formData.get("sector")),
     };
 
-    const getVet = fetchResult(
-      "https://fordoggoz.pythonanywhere.com/vet-recommendation",
-      payload
-    );
+    if (payload.city && payload.sector) {
+      const getVet = fetchResult(
+        "https://fordoggoz.pythonanywhere.com/vet-recommendation",
+        payload
+      );
 
-    getVet.then((a) => setResult(a));
+      getVet.then((a) => {
+        setResult(a);
+      });
+    }
   };
 
+  useEffect(() => {
+    if (Object.values(result).length > 0) {
+      setShift(!shift);
+    }
+  }, [result]);
+
   return (
-    <>
-      <form className={style.form} onSubmit={handleSubmit}>
-        <FloatingInput label={"Enter city"} name={"city"} />
-        <FloatingInput label={"Enter sector"} name={"sector"} />
-        <Button type={"submit"}>{"Search vet"}</Button>
-      </form>
-      <div className={style.result}>
-        <h3>Nearest vet</h3>
-        <p>{result?.nearestVet}</p>
+    <div className={style.page}>
+      <div className={style.container}>
+        <div className={`${style.formContainer} ${shift ? style.slide : ""}`}>
+          <div className={style.logo}>
+            <img src="/svg/logo.svg" alt="" />
+            <h3>ForDoggoZ</h3>
+          </div>
+          <div className={style.head}>
+            <h2>
+              {shift ? "Nearest Vet" : "Find the nearest veterinary clinic"}
+            </h2>
+            {!shift && <p>Fill the form below.</p>}
+            {shift && <h3>{result?.nearestVet}</h3>}
+          </div>
+          <form onSubmit={handleSubmit}>
+            {!shift && (
+              <>
+                <FloatingInput label={"Enter city"} name={"city"} />
+                <FloatingInput label={"Enter sector"} name={"sector"} />
+              </>
+            )}
+            <Button>{shift ? "Go Back" : "Find Vet"}</Button>
+          </form>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 
