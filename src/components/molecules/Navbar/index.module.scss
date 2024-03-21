@@ -1,10 +1,12 @@
+@import "./../../../styles/variables.scss";
 @import "./../../../styles/mixins.scss";
 
 .navbar {
+  background-color: $black;
   @include flex-center;
-
   justify-content: space-between;
-  padding: 0rem 5rem;
+  padding: 0 4rem;
+  color: $white;
 
   .logo {
     width: 5rem;
@@ -12,11 +14,74 @@
 
   .navTabs {
     @include flex-center;
-    gap: 2rem;
+    ul {
+      @include flex-center;
+      gap: 2rem;
+      font-weight: $font-semibold;
 
-    .tab {
-      font-weight: bold;
-      font-size: 1rem;
+      a {
+        cursor: default;
+        color: $white;
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+
+  .menu,
+  .close {
+    display: none;
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+@media (max-width: 765px) {
+  .navbar {
+    padding: 0 2rem;
+
+    .menu,
+    .close {
+      &:hover {
+        filter: brightness(50%);
+      }
+    }
+
+    .menu {
+      display: block;
+    }
+
+    .close {
+      top: 2rem;
+      right: 2rem;
+      position: absolute;
+      z-index: 5;
+    }
+
+    .navTabs {
+      position: fixed;
+      height: 100vh;
+      background-color: $black;
+      width: 100%;
+      top: 0;
+      right: -100rem;
+      z-index: 4;
+      transition: ease-in-out 0.5s;
+
+      ul {
+        flex-direction: column;
+      }
+    }
+  }
+
+  .active {
+    .close {
+      display: block;
+    }
+
+    .navTabs {
+      right: 0;
     }
   }
 }

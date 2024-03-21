@@ -1,8 +1,7 @@
-import Home from "@/src/components/organisms/Home";
-import pageData from "./../data/homePage.json";
+import Navbar from "@/src/components/molecules/Navbar";
 
 const Page = () => {
-  return <Home navData={pageData?.navbar} heroContent={pageData?.heroBanner} />;
+  return <Navbar />;
 };
 
 export default Page;
