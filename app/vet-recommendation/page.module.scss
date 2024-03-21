@@ -1,0 +1,90 @@
+@import "./../../src/styles/variables.scss";
+@import "./../../src/styles/mixins.scss";
+
+.page {
+  @include flex-center;
+  background-color: $primary-color;
+  min-height: 100vh;
+  height: max-content;
+
+  .container {
+    min-width: 60%;
+    background-color: $white;
+    min-height: 70vh;
+    height: max-content;
+    @include border;
+    border-radius: 2rem;
+    padding: 2rem;
+    margin: 2rem;
+
+    .formContainer {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1.5rem;
+      width: 50%;
+      transition: 1s;
+
+      .logo {
+        margin-left: -0.75rem;
+        display: flex;
+        align-items: center;
+        img {
+          width: 3.5rem;
+          filter: invert(1);
+        }
+        h3 {
+          font-size: 1.5rem;
+        }
+      }
+
+      p {
+        font-size: 0.9rem;
+        color: $label-color;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        button {
+          background-color: $primary-color;
+          color: $white;
+          width: max-content;
+        }
+      }
+    }
+
+    .slide {
+      transform: translateX(100%);
+    }
+  }
+}
+
+@media (max-width: 765px) {
+  .page {
+    .container {
+      width: 60%;
+      .formContainer {
+        width: 100%;
+
+        .head {
+          h2 {
+            font-size: 1.3rem;
+          }
+        }
+
+        form {
+          button {
+            width: 100%;
+          }
+        }
+      }
+
+      .slide {
+        transform: translateX(0%);
+      }
+    }
+  }
+}
