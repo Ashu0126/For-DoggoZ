@@ -3,6 +3,7 @@ import Navbar from "../../molecules/Navbar";
 import style from "./index.module.scss";
 import Button from "../../atoms/Button";
 import Helper from "../../molecules/Helper";
+import Footer from "../../molecules/Footer";
 
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
         </div>
       </div>
       <Helper />
+      <Footer />
     </>
   );
 };
