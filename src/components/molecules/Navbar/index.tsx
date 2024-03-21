@@ -1,20 +1,44 @@
-import styles from "./index.module.scss";
+"use client";
+import React, { useState } from "react";
+import style from "./index.module.scss";
 
-const Navbar = (props: any) => {
-  const { logo, navTabs } = props;
+const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleClick = () => {
+    setOpen(!open);
+  };
 
   return (
-    <nav className={styles.navbar}>
-      <a href={logo?.link}>
-        <img className={styles.logo} src={logo?.icon} alt="" />
+    <nav className={`${style.navbar} ${open ? style.active : ""}`}>
+      <a href="/">
+        <img className={style.logo} src="/svg/logo.svg" alt="" />
       </a>
-      <ul className={styles.navTabs}>
-        {navTabs?.map((item: any) => (
-          <a href={item?.link} key={item?.name}>
-            <li className={styles.tab}>{item?.name}</li>
+      <div className={style.navTabs}>
+        <ul>
+          <a href="/">
+            <li>why us</li>
           </a>
-        ))}
-      </ul>
+          <a href="/">
+            <li>service</li>
+          </a>
+          <a href="/">
+            <li>contact</li>
+          </a>
+        </ul>
+        <img
+          onClick={handleClick}
+          className={style.close}
+          src="/svg/close.svg"
+          alt=""
+        />
+      </div>
+      <img
+        onClick={handleClick}
+        className={style.menu}
+        src="/svg/menu.svg"
+        alt=""
+      />
     </nav>
   );
 };
