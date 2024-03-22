@@ -1,5 +1,5 @@
-@import "./../../src/styles/variables.scss";
-@import "./../../src/styles/mixins.scss";
+@import "@/src/styles/variables.scss";
+@import "@/src/styles/mixins.scss";
 
 .page {
   @include flex-center;
@@ -29,6 +29,8 @@
 
       button {
         background-color: $label-color;
+        color: $white;
+        width: max-content;
       }
 
       .logo {
@@ -41,22 +43,6 @@
         }
         h3 {
           font-size: 1.5rem;
-        }
-      }
-
-      p {
-        font-size: 0.9rem;
-        color: $label-color;
-      }
-
-      form {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-
-        button {
-          color: $white;
-          width: max-content;
         }
       }
 
@@ -217,12 +203,6 @@
 
           h3 {
             font-size: 1.2rem;
-          }
-        }
-
-        .head {
-          h2 {
-            font-size: 1.3rem;
           }
         }
 
