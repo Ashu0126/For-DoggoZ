@@ -7,11 +7,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-@font-face {
-  font-family: "protest-revolution";
-  src: url("/font/ProtestRevolution-Regular.ttf") format("truetype"); /* Fallback for very old browsers */
-}
-
 body {
   min-height: 100vh;
 }
@@ -27,5 +22,5 @@ li {
 
 h1,
 h3 {
-  font-family: "protest-revolution", sans-serif;
+  font-family: "Protest Revolution", sans-serif;
 }
