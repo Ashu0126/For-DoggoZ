@@ -1,12 +1,12 @@
 "use client";
+import { fetchResult } from "@/src/utils/fetchApi";
 import React, { Fragment, useState } from "react";
 import FormLayout from "../FormLayout";
-import { fetchResult } from "@/src/utils/fetchApi";
+import style from "./index.module.scss";
 import FloatingInput from "../../atoms/FloatingInput";
 import Button from "../../atoms/Button";
-import style from "./index.module.scss";
 
-const VetRecommender = (props: any) => {
+const DiseasePredictor = (props: any) => {
   const { pageData } = props;
   const [result, setResult] = useState<any>({});
   const [shift, setShift] = useState<boolean>(false);
@@ -15,13 +15,16 @@ const VetRecommender = (props: any) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const payload = {
-      city: formData.get("city"),
-      sector: Number(formData.get("sector")),
+      symptoms: [
+        formData.get("symtom1"),
+        formData.get("symtom2"),
+        formData.get("symtom3"),
+      ],
     };
 
-    if (payload.city && payload.sector) {
+    if (payload.symptoms) {
       const getVet = fetchResult(
-        "https://fordoggoz.pythonanywhere.com/vet-recommendation",
+        "https://fordoggoz.pythonanywhere.com/disease-prediction",
         payload
       );
 
@@ -34,7 +37,7 @@ const VetRecommender = (props: any) => {
 
   return (
     <FormLayout
-      result={result?.nearestVet}
+      result={result?.name + " : " + result?.description}
       shift={shift}
       setShift={setShift}
       pageData={pageData}
@@ -58,4 +61,4 @@ const VetRecommender = (props: any) => {
   );
 };
 
-export default VetRecommender;
+export default DiseasePredictor;
