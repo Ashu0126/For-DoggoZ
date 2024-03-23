@@ -9,8 +9,8 @@
     @include to-rem(border-radius, 5);
     width: calc(100% - 2rem);
     outline: none;
-    padding: 1.6rem 1rem 0.75rem;
-    font-size: 1rem;
+    padding: 1.5rem 0.75rem 0.65rem;
+    font-size: 0.9rem;
     font-weight: 600;
 
     &:focus {
@@ -20,14 +20,18 @@
 
   label {
     position: absolute;
-    top: 1.2rem;
-    left: 1rem;
+    top: 1.1rem;
+    left: 0.8rem;
     transition: 0.2s;
     color: $label-color;
+    font-size: 0.9rem;
+    padding-right: 0.8rem;
+    width: max-content;
+    overflow: hidden;
   }
 
   .active {
-    font-size: 0.75rem;
-    top: 0.6rem;
+    font-size: 0.7rem;
+    top: 0.5rem;
   }
 }

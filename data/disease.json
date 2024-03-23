@@ -1,0 +1,25 @@
+{
+  "logo": {
+    "icon": "/svg/logo.svg",
+    "text": "ForDoggoZ"
+  },
+  "formData": {
+    "heading": "Predict disease",
+    "subHeading": "Fill the form below with observered symtoms.",
+    "inputs": [
+      { "label": "Enter symtom 1", "name": "symtom1" },
+      { "label": "Enter symtom 2", "name": "symtom2" },
+      { "label": "Enter symtom 3", "name": "symtom3" }
+    ],
+    "btnText": "Predict disease"
+  },
+  "resultSection": {
+    "heading": "Disease name",
+    "btnIcon": "/svg/backArrow.svg"
+  },
+  "carousel": [
+    "https://img.freepik.com/premium-photo/realistic-golden-retriever-dog-ravishing-natural-outdoor-background_31965-79638.jpg",
+    "https://w0.peakpx.com/wallpaper/743/968/HD-wallpaper-portrait-animal-background-smile-animal-reflective-retriever-labrador-canine-domestic-animal-glamor-shot-happy-dog-black-background-golden-puppy-pet-animal-mans-best-frie.jpg",
+    "https://coolwallpapers.me/th700/1449601-king-charles-spaniel.jpg"
+  ]
+}

@@ -32,7 +32,7 @@ const FormLayout = (props: any) => {
                 </Button>
                 <div className={style.result}>
                   <h2>{pageData?.resultSection?.heading}</h2>
-                  <h3>{result?.nearestVet}</h3>
+                  <h3>{result}</h3>
                 </div>
               </div>
             )}
