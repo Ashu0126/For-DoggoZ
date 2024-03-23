@@ -1,0 +1,30 @@
+{
+  "serviceSection": {
+    "heading": "OUR SERVICE",
+    "subHeading": "What <span>Services</span> We're Offering",
+    "description": "Delivering advanced offerings such as health forecast, vet referrals, breed categorization, and personalized breed suggestions based on distinct characteristics, enhancing the overall care and support for beloved canine companions.",
+    "services": [
+      {
+        "name": "Disease Prediction",
+        "img": "/img/dog-lindken.jpg",
+        "link": "/disease-prediction"
+      },
+      {
+        "name": "Vet Recommendation",
+        "img": "/img/dog-vet.jpg",
+        "link": "/vet-recommendation"
+      },
+      {
+        "name": "Breed Classifier",
+        "img": "/img/back.webp",
+        "link": "/breed-classifier"
+      },
+      {
+        "name": "Dog Recommendation",
+        "img": "/img/breed.jpg",
+        "link": "/dog-recommendation"
+      }
+    ],
+    "goIcon": "/svg/backArrow.svg"
+  }
+}

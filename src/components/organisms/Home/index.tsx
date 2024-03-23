@@ -4,6 +4,7 @@ import style from "./index.module.scss";
 import Button from "../../atoms/Button";
 import Helper from "../../molecules/Helper";
 import Footer from "../../molecules/Footer";
+import Service from "../../molecules/Service";
 
 const Home = () => {
   return (
@@ -20,6 +21,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <Service />
       <Helper />
       <Footer />
     </>
