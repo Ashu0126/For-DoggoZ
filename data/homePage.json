@@ -1,4 +1,26 @@
 {
+  "whyUsSection": {
+    "heading": "<span>Why</span> Choose <br/>Us?",
+    "primaryImg": "https://www.dailypaws.com/thmb/V0-OeHgnrXbiCVATHEO1RyMRTRA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/woman-with-dog-1178780095-2000-c8fae283c7ad486bbd5b6e9b42009469.jpg",
+    "features": [
+      {
+        "title": "Reliable Ai Models",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+        "icon": "/svg/correct.svg"
+      },
+      {
+        "title": "One of the kind",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+        "icon": "/svg/ofk.svg"
+      },
+      {
+        "title": "Zeus Chatbot",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit",
+        "icon": "/svg/chatbot.svg"
+      }
+    ],
+    "secondaryImg": "https://www.westwaypets.com/wp-content/uploads/2023/10/Westway-Studio-Nalu-australian-shepherd-dog-and-mom-09.jpg"
+  },
   "serviceSection": {
     "heading": "OUR SERVICE",
     "subHeading": "What <span>Services</span> We're Offering",

@@ -5,6 +5,7 @@ import Button from "../../atoms/Button";
 import Helper from "../../molecules/Helper";
 import Footer from "../../molecules/Footer";
 import Service from "../../molecules/Service";
+import WhyUs from "../../molecules/WhyUs";
 
 const Home = () => {
   return (
@@ -21,7 +22,9 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <WhyUs />
       <Service />
+      <div className={style.background}></div>
       <Helper />
       <Footer />
     </>

@@ -37,15 +37,26 @@
         @include flex-center;
         justify-content: space-between;
 
+        &:hover {
+          background-color: $border-color;
+        }
+
         &:hover > p {
           transform: translateX(3rem);
           // margin-left: 2rem;
-          font-size: 2.75rem;
+          font-size: 2.5rem;
           color: $black;
         }
 
         &:hover > .img {
           opacity: 1;
+        }
+
+        &:hover > .go {
+          rotate: 135deg;
+          background-color: #e45ea1;
+          border-color: #e45ea1;
+          filter: invert(1);
         }
 
         p {
@@ -58,16 +69,17 @@
 
         .go {
           width: 2rem;
-          border: 4px $black solid;
+          border: 2px $black solid;
           border-radius: 50%;
           rotate: 180deg;
+          margin-right: 1rem;
         }
 
         .img {
           opacity: 0;
           position: absolute;
-          width: 20rem;
-          height: 12rem;
+          width: 15rem;
+          height: 10rem;
           object-fit: cover;
           border-radius: 1rem;
           left: 50%;
@@ -85,7 +97,7 @@
     .serviceHeader {
       .serviceHeading {
         h2 {
-          font-size: 2.5rem;
+          font-size: 2.3rem;
           max-width: 100%;
           width: 100%;
 
@@ -96,25 +108,30 @@
       }
 
       p {
-        width: 30rem;
+        font-size: 0.9rem;
       }
     }
 
     .serviceContainer {
       ul {
         li {
+          gap: 1rem;
           &:hover > p {
             transform: translateX(0rem);
-            font-size: 2rem;
+            font-size: 1.5rem;
           }
 
           p {
             transition: 0;
-            font-size: 1.55rem;
+            font-size: 1.5rem;
           }
 
           .img {
             display: none;
+          }
+
+          .go {
+            margin: 0;
           }
         }
       }
