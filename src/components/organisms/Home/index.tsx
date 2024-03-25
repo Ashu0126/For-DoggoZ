@@ -6,6 +6,7 @@ import Helper from "../../molecules/Helper";
 import Footer from "../../molecules/Footer";
 import Service from "../../molecules/Service";
 import WhyUs from "../../molecules/WhyUs";
+import Modal from "../../atoms/Modal";
 
 const Home = () => {
   return (
