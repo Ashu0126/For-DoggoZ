@@ -1,4 +1,10 @@
 {
+  "heroSection": {
+    "name": "ForDoggoZ",
+    "mainHead": "An Initiative",
+    "quote": "\"We care because you care\"",
+    "buttons": ["Need help?", "Register as helper"]
+  },
   "whyUsSection": {
     "heading": "<span>Why</span> Choose <br/>Us?",
     "primaryImg": "https://www.dailypaws.com/thmb/V0-OeHgnrXbiCVATHEO1RyMRTRA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/woman-with-dog-1178780095-2000-c8fae283c7ad486bbd5b6e9b42009469.jpg",
@@ -48,5 +54,18 @@
       }
     ],
     "goIcon": "/svg/backArrow.svg"
+  },
+  "modalForm": {
+    "heading": "Register as a helper",
+    "subHeading": "Fill the details below",
+    "inputFields": [
+      { "label": "Enter name", "name": "name" },
+      { "label": "Enter name", "name": "name" },
+      { "label": "Enter name", "name": "name" },
+      { "label": "Enter name", "name": "name" },
+      { "label": "Enter name", "name": "name" }
+    ],
+    "closeIcon": "/svg/close.svg",
+    "btnText": "Submit"
   }
 }
