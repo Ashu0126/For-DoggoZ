@@ -54,7 +54,7 @@ const DiseasePredictor = (props: any) => {
                 <FloatingInput label={input?.label} name={input?.name} />
               </Fragment>
             ))}
-          <Button>{pageData?.formData?.btnText}</Button>
+          <Button type="submit">{pageData?.formData?.btnText}</Button>
         </form>
       </div>
     </FormLayout>

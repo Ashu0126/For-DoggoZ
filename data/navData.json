@@ -1,0 +1,11 @@
+{
+  "homeLink": "/",
+  "logo": "/svg/logo.svg",
+  "closeIcon": "/svg/close.svg",
+  "menuIcon": "/svg/menu.svg",
+  "navTabs": [
+    { "name": "why us", "link": "/" },
+    { "name": "our services", "link": "/" },
+    { "name": "contact", "link": "/" }
+  ]
+}

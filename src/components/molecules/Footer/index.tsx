@@ -1,25 +1,20 @@
-import React from "react";
 import style from "./index.module.scss";
+import footerData from "@/data/footerData.json";
 
 const Footer = () => {
   return (
     <footer className={style.footer}>
       <div className={style.content}>
         <div className={style.logo}>
-          <img src="/svg/logo.svg" alt="" />
-          <h3>ForDoggoZ</h3>
+          <img src={footerData?.logo} alt="" />
+          <h3>{footerData?.companyName}</h3>
         </div>
         <div className={style.aboutUs}>
-          <h4>About Us</h4>
-          <p>
-            {`" For DoggoZ - Your one-stop destination for credible information
-            and resources on everything related to dogs "`}
-          </p>
+          <h4>{footerData?.aboutUs?.heading}</h4>
+          <p>{footerData?.aboutUs?.description}</p>
         </div>
       </div>
-      <p className={style.copyright}>
-        2022-24 Copyright &copy; All Rights Reserved | For DoggoZ
-      </p>
+      <p className={style.copyright}>{footerData?.copyright}</p>
     </footer>
   );
 };
