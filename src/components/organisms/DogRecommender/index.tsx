@@ -57,8 +57,7 @@ const DogRecommender = (props: any) => {
                 <FloatingInput label={input?.label} name={input?.name} />
               </Fragment>
             ))}
-          {/* </div> */}
-          <Button>{pageData?.formData?.btnText}</Button>
+          <Button type="submit">{pageData?.formData?.btnText}</Button>
         </form>
       </div>
     </FormLayout>

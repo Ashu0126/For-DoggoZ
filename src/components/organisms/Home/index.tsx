@@ -11,7 +11,7 @@ import Modal from "../../atoms/Modal";
 import FloatingInput from "../../atoms/FloatingInput";
 
 const Home = (props: any) => {
-  const { pageData } = props;
+  const { pageData, navData, footerData } = props;
   const { heroSection, whyUsSection, serviceSection, modalForm } = pageData;
 
   const [openModal, setOpenModal] = useState<boolean>(false);
@@ -27,7 +27,7 @@ const Home = (props: any) => {
   return (
     <>
       <div className={style.heroBanner}>
-        <Navbar />
+        <Navbar navData={navData} />
         <div className={style.content}>
           <h3>{heroSection?.name}</h3>
           <h1>{heroSection?.mainHead}</h1>
@@ -44,7 +44,6 @@ const Home = (props: any) => {
       <Service sectionData={serviceSection} />
       <div className={style.background}></div>
       <Helper />
-      <Footer />
       <Modal show={openModal} hide={toggleModal} close={modalForm?.closeIcon}>
         <div className={style.modalForm}>
           <h4>{modalForm?.heading}</h4>

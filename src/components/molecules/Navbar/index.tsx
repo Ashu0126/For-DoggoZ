@@ -1,8 +1,9 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import style from "./index.module.scss";
 
-const Navbar = () => {
+const Navbar = (props: any) => {
+  const { navData } = props;
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
@@ -11,32 +12,28 @@ const Navbar = () => {
 
   return (
     <nav className={`${style.navbar} ${open ? style.active : ""}`}>
-      <a href="/">
-        <img className={style.logo} src="/svg/logo.svg" alt="" />
+      <a href={navData?.homeLink}>
+        <img className={style.logo} src={navData?.logo} alt="" />
       </a>
       <div className={style.navTabs}>
         <ul>
-          <a href="/">
-            <li>why us</li>
-          </a>
-          <a href="/">
-            <li>service</li>
-          </a>
-          <a href="/">
-            <li>contact</li>
-          </a>
+          {navData?.navTabs?.map((tab: any) => (
+            <a key={tab?.name} href={tab?.link}>
+              <li>{tab?.name}</li>
+            </a>
+          ))}
         </ul>
         <img
           onClick={handleClick}
           className={style.close}
-          src="/svg/close.svg"
+          src={navData?.closeIcon}
           alt=""
         />
       </div>
       <img
         onClick={handleClick}
         className={style.menu}
-        src="/svg/menu.svg"
+        src={navData?.menuIcon}
         alt=""
       />
     </nav>
