@@ -1,0 +1,13 @@
+.carouselContainer {
+  .carousel {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      grid-area: 1/4;
+    }
+  }
+}
