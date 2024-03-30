@@ -8,12 +8,14 @@
   height: max-content;
 
   .container {
-    min-width: 60%;
+    max-width: 778px;
+    width: 100%;
     background-color: $white;
     min-height: 70vh;
     height: max-content;
     @include border;
-    @include flex-center;
+    display: flex;
+    justify-content: space-between;
     border-radius: 2rem;
     padding: 2rem;
     margin: 2rem;
@@ -82,14 +84,17 @@
     }
 
     .formCarousel {
-      width: 50%;
-      margin-top: 1.5rem;
+      width: 48%;
       border-radius: 1rem;
       transition: 1s;
     }
 
+    .formCarousel > * {
+      height: 100%;
+    }
+
     .shiftCarousel {
-      transform: translateX(-100%);
+      transform: translateX(-107%);
     }
   }
 }
@@ -189,6 +194,15 @@
       }
 
       .slide {
+        transform: translateX(0%);
+      }
+
+      .formCarousel {
+        margin-top: 1.5rem;
+        width: 100%;
+      }
+
+      .shiftCarousel {
         transform: translateX(0%);
       }
     }
