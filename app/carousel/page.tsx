@@ -1,16 +1,45 @@
-import React from "react";
-import style from "./page.module.scss";
+"use client";
 
-const Page = () => {
+import React, { useState } from "react";
+import styles from "./page.module.scss"; // Import SCSS module for styling
+
+function Carousel() {
+  const slides = [
+    { image: "/img/back.webp", alt: "Slide 1" },
+    { image: "/img/back.webp", alt: "Slide 2" },
+    { image: "/img/back.webp", alt: "Slide 3" },
+  ];
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const goToSlide = (index: any) => {
+    setCurrentSlide(index);
+  };
+
   return (
-    <div className={style.carouselContainer}>
-      <div className={style.carousel}>
-        <img src="/img/back.webp" alt="" />
-        <img src="/img/back.webp" alt="" />
-        <img src="/img/back.webp" alt="" />
+    <div className={styles.carousel}>
+      <div
+        className={styles.carouselContainer}
+        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+      >
+        {slides.map((slide: any, index: any) => (
+          <div className={styles.carouselItem} key={index}>
+            <img src={slide.image} alt={slide.alt} />
+          </div>
+        ))}
+      </div>
+      <div className={styles.carouselBullets}>
+        {slides.map((_: any, index: any) => (
+          <span
+            key={index}
+            className={`${styles.bullet} ${
+              currentSlide === index ? styles.active : ""
+            }`}
+            onClick={() => goToSlide(index)}
+          ></span>
+        ))}
       </div>
     </div>
   );
-};
+}
 
-export default Page;
+export default Carousel;
