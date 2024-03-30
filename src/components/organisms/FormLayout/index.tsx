@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import Button from "../../atoms/Button";
 import style from "./index.module.scss";
+import Carousel from "@/app/carousel/page";
 
 const FormLayout = (props: any) => {
   const { pageData, children, result, shift, setShift } = props;
@@ -36,29 +37,11 @@ const FormLayout = (props: any) => {
           )}
         </div>
         <div
-          className={`${style.carouselContainer} ${
-            shift ? style.carouselSlide : ""
+          className={`${style.formCarousel} ${
+            shift ? style.shiftCarousel : ""
           }`}
         >
-          <div className={style.carousel}>
-            {pageData?.carousel?.map((item: any, index: any) => (
-              <img
-                key={`_${index}`}
-                src={item}
-                className={activeIndex === index ? style.show : ""}
-                alt=""
-              />
-            ))}
-          </div>
-          <div className={style.carouselBtn}>
-            {pageData?.carousel?.map((_: any, index: any) => (
-              <span
-                key={`_${index}`}
-                onClick={() => setActiveIndex(index)}
-                className={activeIndex === index ? style.active : ""}
-              ></span>
-            ))}
-          </div>
+          <Carousel />
         </div>
       </div>
     </div>
