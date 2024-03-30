@@ -6,8 +6,6 @@ import Carousel from "@/app/carousel/page";
 
 const FormLayout = (props: any) => {
   const { pageData, children, result, shift, setShift } = props;
-
-  const [activeIndex, setActiveIndex] = useState(0);
   const [type, setType] = useState("");
 
   useEffect(() => {
