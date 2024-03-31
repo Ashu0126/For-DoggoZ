@@ -4,21 +4,32 @@ import Navbar from "../../molecules/Navbar";
 import style from "./index.module.scss";
 import Button from "../../atoms/Button";
 import Helper from "../../molecules/Helper";
-import Footer from "../../molecules/Footer";
 import Service from "../../molecules/Service";
 import WhyUs from "../../molecules/WhyUs";
 import Modal from "../../atoms/Modal";
 import FloatingInput from "../../atoms/FloatingInput";
+import { fetchResult } from "@/src/utils/fetchApi";
 
 const Home = (props: any) => {
-  const { pageData, navData, footerData } = props;
+  const { pageData, navData } = props;
   const { heroSection, whyUsSection, serviceSection, modalForm } = pageData;
 
   const [openModal, setOpenModal] = useState<boolean>(false);
 
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
-  };
+  // const handleSubmit = (e: any) => {
+  //   e.preventDefault();
+  //   const formData = new FormData(e.target);
+
+  //   const payload: any = {}; // Define payload object
+
+  //   modalForm?.inputFields?.forEach((input: any) => {
+  //     payload[input.name] = formData.get(input.name); // Retrieve value from FormData using get() method
+  //   });
+
+  //   console.log(payload);
+
+  //   fetchResult("http://127.0.0.1:8800/register-helper", payload);
+  // };
 
   const toggleModal = () => {
     setOpenModal(!openModal);
