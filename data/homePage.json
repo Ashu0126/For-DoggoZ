@@ -61,6 +61,7 @@
     "inputFields": [
       { "label": "Enter name", "name": "name" },
       { "label": "Enter age", "name": "age" },
+      { "label": "Enter phone number", "name": "number" },
       { "label": "Enter email address", "name": "email" },
       { "label": "Enter location", "name": "location" }
     ],

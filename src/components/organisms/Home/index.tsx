@@ -16,20 +16,27 @@ const Home = (props: any) => {
 
   const [openModal, setOpenModal] = useState<boolean>(false);
 
-  // const handleSubmit = (e: any) => {
-  //   e.preventDefault();
-  //   const formData = new FormData(e.target);
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
 
-  //   const payload: any = {}; // Define payload object
+    const payload: any = {}; // Define payload object
 
-  //   modalForm?.inputFields?.forEach((input: any) => {
-  //     payload[input.name] = formData.get(input.name); // Retrieve value from FormData using get() method
-  //   });
+    modalForm?.inputFields?.forEach((input: any) => {
+      payload[input.name] = formData.get(input.name); // Retrieve value from FormData using get() method
+    });
 
-  //   console.log(payload);
+    console.log(payload);
 
-  //   fetchResult("http://127.0.0.1:8800/register-helper", payload);
-  // };
+    fetchResult(
+      "https://fordoggoz.pythonanywhere.com/register-helper",
+      payload
+    ).then((res) => {
+      if (res?.status === "success") {
+        toggleModal();
+      }
+    });
+  };
 
   const toggleModal = () => {
     setOpenModal(!openModal);
@@ -65,7 +72,7 @@ const Home = (props: any) => {
                 <FloatingInput label={input?.label} name={input?.name} />
               </Fragment>
             ))}
-            <Button onClick={toggleModal}>{modalForm?.btnText}</Button>
+            <Button type={"submit"}>{modalForm?.btnText}</Button>
           </form>
         </div>
       </Modal>
