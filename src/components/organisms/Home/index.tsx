@@ -20,13 +20,11 @@ const Home = (props: any) => {
     e.preventDefault();
     const formData = new FormData(e.target);
 
-    const payload: any = {}; // Define payload object
+    const payload: any = {};
 
     modalForm?.inputFields?.forEach((input: any) => {
-      payload[input.name] = formData.get(input.name); // Retrieve value from FormData using get() method
+      payload[input.name] = formData.get(input.name);
     });
-
-    console.log(payload);
 
     fetchResult(
       "https://fordoggoz.pythonanywhere.com/register-helper",
