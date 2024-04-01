@@ -25,6 +25,51 @@
   }
 }
 
+.modalContainer {
+  h2 {
+    margin-bottom: 10px; /* Add some space below the heading */
+  }
+
+  .table {
+    overflow-y: scroll;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+
+    thead {
+      background-color: #2980b9;
+      color: white;
+      font-weight: bold;
+    }
+
+    th,
+    td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #3498db;
+    }
+
+    tbody {
+      tr {
+        &:hover {
+          background-color: #f1c40f;
+        }
+      }
+    }
+
+    tr:nth-child(even) {
+      background-color: lighten(#ecf0f1, 2%);
+    }
+  }
+
+  p {
+    margin: 10px 0; /* Add margin to the paragraph */
+  }
+}
+
 @media (max-width: 765px) {
   .helperSection {
     padding: 2rem;
