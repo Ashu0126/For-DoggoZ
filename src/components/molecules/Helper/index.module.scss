@@ -13,7 +13,6 @@
       color: $primary-color;
       font-family: "Caveat Brush", cursive;
       font-size: 3.5rem;
-      // margin: 0 0.5rem;
     }
   }
 
@@ -27,7 +26,8 @@
 
 .modalContainer {
   h2 {
-    margin-bottom: 10px; /* Add some space below the heading */
+    margin-bottom: 0.75rem;
+    font-size: 2rem;
   }
 
   .table {
@@ -37,36 +37,35 @@
   table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
 
     thead {
-      background-color: #2980b9;
-      color: white;
+      background-color: $primary-color;
+      color: $white;
       font-weight: bold;
     }
 
     th,
     td {
-      padding: 10px;
+      padding: 0.5rem 0.75rem;
       text-align: left;
-      border-bottom: 1px solid #3498db;
+      border-bottom: 1px solid $border-color;
     }
 
     tbody {
       tr {
         &:hover {
-          background-color: #f1c40f;
+          background-color: $border-color;
         }
       }
     }
 
     tr:nth-child(even) {
-      background-color: lighten(#ecf0f1, 2%);
+      background-color: lighten($border-color, 2%);
     }
   }
 
   p {
-    margin: 10px 0; /* Add margin to the paragraph */
+    margin: 10px 0;
   }
 }
 

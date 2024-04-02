@@ -28,6 +28,10 @@
     padding-right: 0.8rem;
     width: max-content;
     overflow: hidden;
+
+    &:hover {
+      cursor: text;
+    }
   }
 
   .active {

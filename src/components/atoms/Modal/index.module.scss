@@ -1,40 +1,52 @@
 @import "./../../../styles/mixins.scss";
 @import "./../../../styles/variables.scss";
 
-.modal {
+.modalBack {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 30rem;
-  z-index: 10;
+  top: 0;
+  left: 0;
   width: 100%;
-  background-color: $white;
-  border-radius: 1rem;
-  padding: 2rem;
+  height: 100%;
+  background-color: $background-blur;
+  backdrop-filter: blur(8px);
+  z-index: 9;
   display: none;
-  flex-direction: column;
-  align-items: stretch;
-  max-height: 90vh;
-  overflow: auto;
 
-  .header {
-    @include flex-center;
-    justify-content: flex-end;
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 30rem;
+    z-index: 10;
+    width: 100%;
+    background-color: $white;
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    max-height: 90vh;
+    overflow: auto;
 
-    img {
-      width: 2rem;
-      filter: invert(1);
+    .header {
+      @include flex-center;
+      justify-content: flex-end;
 
-      &:hover {
-        filter: brightness(50%);
+      img {
+        width: 2rem;
+        filter: invert(1);
+
+        &:hover {
+          filter: brightness(50%);
+        }
       }
     }
   }
 }
 
 .active {
-  display: flex;
+  display: block;
 }
 
 @media (max-width: 800px) {
