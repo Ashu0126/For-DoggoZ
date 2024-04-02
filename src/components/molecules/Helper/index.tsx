@@ -12,7 +12,7 @@ const Helper = () => {
   const handleSubmit = (e: any) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    const payload = { location: formData.get("location") };
+    const payload = { location: formData.get("personLocation") };
 
     fetchResult(
       "https://fordoggoz.pythonanywhere.com/nearest-people",
@@ -22,10 +22,6 @@ const Helper = () => {
       setOpen(true);
     });
   };
-
-  useEffect(() => {
-    console.log(peopleData);
-  }, [peopleData]);
 
   return (
     <>
@@ -37,7 +33,10 @@ const Helper = () => {
           }}
         />
         <form onSubmit={handleSubmit} className={style.inputSection}>
-          <FloatingInput label={"Enter your location"} name={"location"} />
+          <FloatingInput
+            label={"Enter your location"}
+            name={"personLocation"}
+          />
           <Button type={"submit"}>Search</Button>
         </form>
       </div>

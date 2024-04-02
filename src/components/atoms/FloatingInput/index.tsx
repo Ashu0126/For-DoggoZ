@@ -26,11 +26,14 @@ const FloatingInput = (props: any) => {
       <input
         type={type}
         name={name}
+        id={name}
         onChange={(e) => setInput(e.target.value)}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
       />
-      <label className={isFocused || input ? styles.active : ""}>{label}</label>
+      <label htmlFor={name} className={isFocused || input ? styles.active : ""}>
+        {label}
+      </label>
     </div>
   );
 };
