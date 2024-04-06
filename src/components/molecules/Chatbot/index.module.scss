@@ -1,0 +1,115 @@
+@import "@/src/styles/variables.scss";
+@import "@/src/styles/mixins.scss";
+
+.chatbot {
+  z-index: 5;
+  position: fixed;
+  bottom: -398px;
+  right: 5rem;
+  max-width: 350px;
+  width: 100%;
+  background-color: $border-color;
+  border-radius: 1.5rem 1.5rem 0 0;
+  transition: linear 0.2s;
+
+  .chatbotHeader {
+    margin: 0.5rem;
+    padding: 1rem 1.5rem 1rem 1rem;
+    background-color: $primary-color;
+    color: $white;
+    border-radius: 1rem 1rem 0 0;
+    @include flex-center;
+    justify-content: space-between;
+
+    .heading {
+      p {
+        font-size: 0.9rem;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+      }
+    }
+
+    .left {
+      @include flex-center;
+      gap: 1rem;
+      img {
+        width: 4rem;
+        height: 4rem;
+        object-fit: cover;
+        object-position: top;
+        filter: invert(0);
+        border-radius: 50%;
+      }
+    }
+
+    img {
+      width: 1.5rem;
+      filter: invert(1);
+      cursor: pointer;
+    }
+  }
+
+  .chatSection {
+    margin: 0.5rem;
+    background-color: $white;
+    height: 300px;
+    padding: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chatSection p {
+    width: max-content;
+    max-width: 70%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .chatSection .bot {
+    background-color: $border-color;
+    align-self: flex-start;
+    border-radius: 1rem 1rem 1rem 0;
+  }
+
+  .chatSection .user {
+    background-color: $primary-color;
+    color: $white;
+    align-self: flex-end;
+    border-radius: 1rem 1rem 0 1rem;
+  }
+
+  .inputBox {
+    display: flex;
+    margin: 0.5rem;
+
+    div {
+      width: 100%;
+    }
+
+    button {
+      background-color: $primary-color;
+      color: $white;
+      @include flex-center;
+
+      img {
+        filter: invert(1);
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+  }
+}
+
+.active {
+  bottom: 0;
+}
+
+@media (max-width: 550px) {
+  .chatbot {
+    right: 50%;
+    transform: translateX(50%);
+  }
+}

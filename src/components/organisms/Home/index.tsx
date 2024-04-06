@@ -9,6 +9,7 @@ import WhyUs from "../../molecules/WhyUs";
 import Modal from "../../atoms/Modal";
 import FloatingInput from "../../atoms/FloatingInput";
 import { fetchResult } from "@/src/utils/fetchApi";
+import Chatbot from "../../molecules/Chatbot";
 
 const Home = (props: any) => {
   const { pageData, navData } = props;
@@ -42,6 +43,7 @@ const Home = (props: any) => {
 
   return (
     <>
+      <Chatbot />
       <div className={style.heroBanner}>
         <Navbar navData={navData} />
         <div className={style.content}>
