@@ -1,7 +1,6 @@
 "use client";
-
 import React, { useState } from "react";
-import styles from "./page.module.scss"; // Import SCSS module for styling
+import styles from "./index.module.scss";
 
 function Carousel() {
   const slides = [

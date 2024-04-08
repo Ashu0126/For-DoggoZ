@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import Button from "../../atoms/Button";
 import style from "./index.module.scss";
-import Carousel from "@/app/carousel/page";
+import Carousel from "@/src/components/molecules/Carousel";
 
 const FormLayout = (props: any) => {
   const { pageData, children, result, shift, setShift } = props;
