@@ -57,7 +57,9 @@ const Home = (props: any) => {
           <h1>{heroSection?.mainHead}</h1>
           <p>{heroSection?.quote}</p>
           <div className={style.btnContainer}>
-            <Button>{heroSection?.buttons?.[0]}</Button>
+            <Button>
+              <a href="#helper">{heroSection?.buttons?.[0]}</a>
+            </Button>
             <Button variant={"outline"} onClick={toggleModal}>
               {heroSection?.buttons?.[1]}
             </Button>

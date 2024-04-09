@@ -4,7 +4,7 @@ const WhyUs = (props: any) => {
   const { sectionData } = props;
 
   return (
-    <div className={style.whyUsSection}>
+    <div className={style.whyUsSection} id="whyUs">
       <div className={style.leftContainer}>
         <div className={style.featuresContainer}>
           <div className={style.feature}>

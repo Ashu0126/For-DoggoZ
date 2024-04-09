@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import style from "./index.module.scss";
 
 const Navbar = (props: any) => {
@@ -9,6 +9,14 @@ const Navbar = (props: any) => {
   const handleClick = () => {
     setOpen(!open);
   };
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [open]);
 
   return (
     <nav className={`${style.navbar} ${open ? style.active : ""}`}>

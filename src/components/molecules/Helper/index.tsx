@@ -29,7 +29,7 @@ const Helper = (props: any) => {
 
   return (
     <>
-      <div className={style.helperSection}>
+      <div className={style.helperSection} id="helper">
         <h2
           dangerouslySetInnerHTML={{
             __html: helperData?.heading,

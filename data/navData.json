@@ -4,8 +4,8 @@
   "closeIcon": "/svg/close.svg",
   "menuIcon": "/svg/menu.svg",
   "navTabs": [
-    { "name": "why us", "link": "/" },
-    { "name": "our services", "link": "/" },
-    { "name": "contact", "link": "/" }
+    { "name": "why us", "link": "#whyUs" },
+    { "name": "our services", "link": "#ourService" },
+    { "name": "contact", "link": "#contact" }
   ]
 }

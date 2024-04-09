@@ -18,8 +18,17 @@
     "btnIcon": "/svg/backArrow.svg"
   },
   "carousel": [
-    "https://img.freepik.com/premium-photo/realistic-golden-retriever-dog-ravishing-natural-outdoor-background_31965-79638.jpg",
-    "https://w0.peakpx.com/wallpaper/743/968/HD-wallpaper-portrait-animal-background-smile-animal-reflective-retriever-labrador-canine-domestic-animal-glamor-shot-happy-dog-black-background-golden-puppy-pet-animal-mans-best-frie.jpg",
-    "https://coolwallpapers.me/th700/1449601-king-charles-spaniel.jpg"
+    {
+      "image": "https://img.freepik.com/premium-photo/realistic-golden-retriever-dog-ravishing-natural-outdoor-background_31965-79638.jpg",
+      "alt": "Slide1"
+    },
+    {
+      "image": "https://w0.peakpx.com/wallpaper/743/968/HD-wallpaper-portrait-animal-background-smile-animal-reflective-retriever-labrador-canine-domestic-animal-glamor-shot-happy-dog-black-background-golden-puppy-pet-animal-mans-best-frie.jpg",
+      "alt": "Slide2"
+    },
+    {
+      "image": "https://coolwallpapers.me/th700/1449601-king-charles-spaniel.jpg",
+      "alt": "Slide3"
+    }
   ]
 }

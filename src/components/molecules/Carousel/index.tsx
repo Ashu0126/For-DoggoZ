@@ -2,12 +2,8 @@
 import React, { useState } from "react";
 import styles from "./index.module.scss";
 
-function Carousel() {
-  const slides = [
-    { image: "/img/back.webp", alt: "Slide 1" },
-    { image: "/img/back.webp", alt: "Slide 2" },
-    { image: "/img/back.webp", alt: "Slide 3" },
-  ];
+function Carousel(props: any) {
+  const { slides } = props;
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const goToSlide = (index: any) => {

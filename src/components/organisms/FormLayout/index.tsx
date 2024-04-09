@@ -39,7 +39,7 @@ const FormLayout = (props: any) => {
             shift ? style.shiftCarousel : ""
           }`}
         >
-          <Carousel />
+          <Carousel slides={pageData?.carousel} />
         </div>
       </div>
     </div>

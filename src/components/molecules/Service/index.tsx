@@ -4,7 +4,7 @@ const Service = (props: any) => {
   const { sectionData } = props;
 
   return (
-    <div className={style.serviceSection}>
+    <div className={style.serviceSection} id="ourService">
       <div className={style.serviceHeader}>
         <div className={style.serviceHeading}>
           <h5>{sectionData?.heading}</h5>

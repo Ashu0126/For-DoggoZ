@@ -7,13 +7,13 @@
     "heading": "Breed Recommendation",
     "subHeading": "Fill the form below with required dog category.",
     "inputs": [
-      { "label": "Enter temperament category", "name": "temperament" },
-      { "label": "Enter group category", "name": "group" },
-      { "label": "Enter shedding category", "name": "shedding" },
-      { "label": "Enter grooming frequency category", "name": "grooming" },
-      { "label": "Enter energy level category", "name": "energy" },
-      { "label": "Enter trainability category", "name": "trainability" },
-      { "label": "Enter demeanor category", "name": "demeanor" }
+      { "label": "Enter temperament", "name": "temperament" },
+      { "label": "Enter group", "name": "group" },
+      { "label": "Enter shedding", "name": "shedding" },
+      { "label": "Enter grooming frequency", "name": "grooming" },
+      { "label": "Enter energy level", "name": "energy" },
+      { "label": "Enter trainability", "name": "trainability" },
+      { "label": "Enter demeanor", "name": "demeanor" }
     ],
     "btnText": "Recommend a dog"
   },
@@ -22,8 +22,14 @@
     "btnIcon": "/svg/backArrow.svg"
   },
   "carousel": [
-    "https://img.freepik.com/premium-photo/realistic-golden-retriever-dog-ravishing-natural-outdoor-background_31965-79638.jpg",
-    "https://images7.alphacoders.com/344/344293.jpg",
-    "/img/breed.jpg"
+    {
+      "image": "https://images7.alphacoders.com/344/344293.jpg",
+      "alt": "Slide1"
+    },
+    {
+      "image": "https://img.freepik.com/premium-photo/realistic-golden-retriever-dog-ravishing-natural-outdoor-background_31965-79638.jpg",
+      "alt": "Slide2"
+    },
+    { "image": "/img/breed.jpg", "alt": "Slide3" }
   ]
 }

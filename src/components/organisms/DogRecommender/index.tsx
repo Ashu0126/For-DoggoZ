@@ -50,7 +50,6 @@ const DogRecommender = (props: any) => {
           <p>{pageData?.formData?.subHeading}</p>
         </div>
         <form onSubmit={handleSubmit}>
-          {/* <div className={style.inputBlocks}> */}
           {!shift &&
             pageData?.formData?.inputs?.map((input: any) => (
               <Fragment key={input?.name}>
