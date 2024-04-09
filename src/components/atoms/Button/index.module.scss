@@ -7,6 +7,10 @@
   font-size: 0.95rem;
   font-weight: $font-semibold;
   padding: 0.5rem 1rem;
+
+  &:hover {
+    filter: brightness(90%);
+  }
 }
 
 .outline {

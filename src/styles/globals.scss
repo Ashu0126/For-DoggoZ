@@ -6,6 +6,11 @@
   font-family: "DM Sans", sans-serif;
 }
 
+*::selection {
+  background-color: $black;
+  color: $white;
+}
+
 body {
   min-height: 100vh;
 }

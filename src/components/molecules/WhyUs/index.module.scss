@@ -41,11 +41,7 @@
     .feature {
       padding: 1rem;
       &:first-child {
-        background-color: $black;
-        color: $white;
-        img {
-          filter: invert(1);
-        }
+        background-color: $white;
       }
 
       img {

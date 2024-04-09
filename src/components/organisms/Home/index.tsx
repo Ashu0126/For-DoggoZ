@@ -13,7 +13,13 @@ import Chatbot from "../../molecules/Chatbot";
 
 const Home = (props: any) => {
   const { pageData, navData } = props;
-  const { heroSection, whyUsSection, serviceSection, modalForm } = pageData;
+  const {
+    heroSection,
+    whyUsSection,
+    serviceSection,
+    modalForm,
+    helperSection,
+  } = pageData;
 
   const [openModal, setOpenModal] = useState<boolean>(false);
 
@@ -61,7 +67,7 @@ const Home = (props: any) => {
       <WhyUs sectionData={whyUsSection} />
       <Service sectionData={serviceSection} />
       <div className={style.background}></div>
-      <Helper />
+      <Helper helperData={helperSection} />
       <Modal show={openModal} hide={toggleModal} close={modalForm?.closeIcon}>
         <div className={style.modalForm}>
           <h4>{modalForm?.heading}</h4>
