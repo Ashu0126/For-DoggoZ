@@ -1,18 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import FloatingInput from "../../atoms/FloatingInput";
 import Button from "../../atoms/Button";
 import style from "./index.module.scss";
 import Modal from "../../atoms/Modal";
 import { fetchResult } from "@/src/utils/fetchApi";
 
-const Helper = () => {
+const Helper = (props: any) => {
+  const { helperData } = props;
+
   const [peopleData, setPeopleData] = useState([]);
   const [open, setOpen] = useState(false);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    const payload = { location: formData.get("personLocation") };
+    const payload = {
+      location: formData.get(helperData?.form?.inputField?.name),
+    };
 
     fetchResult(
       "https://fordoggoz.pythonanywhere.com/nearest-people",
@@ -28,21 +32,24 @@ const Helper = () => {
       <div className={style.helperSection}>
         <h2
           dangerouslySetInnerHTML={{
-            __html: `Find Trusted <span>Dog Helpers</span> Near You: Your Furry Friend's
-        <span> Best Companion</span> Awaits!`,
+            __html: helperData?.heading,
           }}
         />
         <form onSubmit={handleSubmit} className={style.inputSection}>
           <FloatingInput
-            label={"Enter your location"}
-            name={"personLocation"}
+            label={helperData?.form?.inputField?.label}
+            name={helperData?.form?.inputField?.name}
           />
-          <Button type={"submit"}>Search</Button>
+          <Button type="submit">{helperData?.form?.btnText}</Button>
         </form>
       </div>
-      <Modal show={open} hide={() => setOpen(false)} close={"/svg/close.svg"}>
+      <Modal
+        show={open}
+        hide={() => setOpen(false)}
+        close={helperData?.closeBtn}
+      >
         <div className={style.modalContainer}>
-          <h2>Nearest helper</h2>
+          <h2>{helperData?.modalHeading}</h2>
           {peopleData.length > 0 ? (
             <div className={style.table}>
               <table>
@@ -63,7 +70,7 @@ const Helper = () => {
               </table>
             </div>
           ) : (
-            <p>No nearest helper</p>
+            <p>{helperData?.errorMsg}</p>
           )}
         </div>
       </Modal>

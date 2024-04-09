@@ -55,6 +55,19 @@
     ],
     "goIcon": "/svg/backArrow.svg"
   },
+  "helperSection": {
+    "heading": "Find Trusted <span>Dog Helpers</span> Near You: Your Furry Friend's<span> Best Companion</span> Awaits!",
+    "form": {
+      "inputField": {
+        "label": "Enter your location",
+        "name": "personLocation"
+      },
+      "btnText": "Search"
+    },
+    "modalHeading": "Nearest helper",
+    "errorMsg": "No nearest helper",
+    "closeBtn": "/svg/close.svg"
+  },
   "modalForm": {
     "heading": "Register as a helper",
     "subHeading": "Fill the details below",
