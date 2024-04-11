@@ -6,9 +6,24 @@ import Button from "../../atoms/Button";
 
 const Chatbot = () => {
   const [open, setOpen] = useState(false);
+  const [chat, setChat] = useState<any>([
+    {
+      user: "bot",
+      msg: "Hi, I am Zeus your personal AI chatbot. Enter your queries below. 😄",
+    },
+  ]);
 
   const handleToggle = () => {
     setOpen(!open);
+  };
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const userMsg = formData.get("userMsg");
+    console.log(typeof userMsg);
+    setChat([...chat, { user: "user", msg: userMsg }]);
+    e.target.reset();
   };
 
   return (
@@ -21,36 +36,21 @@ const Chatbot = () => {
           <img onClick={handleToggle} src="/svg/close.svg" alt="" />
         </div>
         <div className={style.chatSection}>
-          <p className={style.bot}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis illum
-            dicta ipsam aliquam recusandae
-          </p>
-          <p className={style.user}>Hello what you wanna ask</p>
-          <p className={style.bot}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis illum
-            dicta ipsam aliquam recusandae
-          </p>
-          <p className={style.user}>Hello what you wanna ask</p>
-          <p className={style.bot}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis illum
-            dicta ipsam aliquam recusandae
-          </p>
-          <p className={style.user}>Hello what you wanna ask</p>
-          <p className={style.bot}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis illum
-            dicta ipsam aliquam recusandae
-          </p>
-          <p className={style.user}>Hello what you wanna ask</p>
+          {chat.map((msg: any) => (
+            <p className={style[msg?.user]} key={msg}>
+              {msg.msg}
+            </p>
+          ))}
         </div>
-        <div className={style.inputBox}>
-          <FloatingInput label={"Ask something"} />
-          <Button>
+        <form className={style.inputBox} onSubmit={handleSubmit}>
+          <FloatingInput label={"Ask something"} name="userMsg" />
+          <Button onClick>
             <img
               src="https://cdn-icons-png.flaticon.com/512/60/60525.png"
               alt=""
             />
           </Button>
-        </div>
+        </form>
       </div>
       <img
         onClick={handleToggle}
