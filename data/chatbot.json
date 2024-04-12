@@ -1,0 +1,14 @@
+{
+  "openingMsg": {
+    "user": "bot",
+    "msg": "Hi, I am Zeus your personal AI chatbot. Enter your queries below. 😄"
+  },
+  "heading": "Chat with Zeus",
+  "closeBtn": "/svg/close.svg",
+  "inputField": {
+    "label": "Ask me Something",
+    "name": "userMsg"
+  },
+  "btnImg": "https://cdn-icons-png.flaticon.com/512/60/60525.png",
+  "chatBotIcon": "https://us.123rf.com/450wm/nada01/nada012303/nada01230303482/201202892-robot-logo-images-illustration-design.jpg?ver=6"
+}

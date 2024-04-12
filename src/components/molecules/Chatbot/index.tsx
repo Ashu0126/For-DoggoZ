@@ -3,15 +3,11 @@ import style from "./index.module.scss";
 import FloatingInput from "../../atoms/FloatingInput";
 import Button from "../../atoms/Button";
 import { fetchResult } from "@/src/utils/fetchApi";
+import chatbotData from "@/data/chatbot.json";
 
 const Chatbot = () => {
   const [open, setOpen] = useState(false);
-  const [chat, setChat] = useState([
-    {
-      user: "bot",
-      msg: "Hi, I am Zeus your personal AI chatbot. Enter your queries below. 😄",
-    },
-  ]);
+  const [chat, setChat] = useState([chatbotData?.openingMsg]);
 
   const handleToggle = () => {
     setOpen((prevOpen) => !prevOpen);
@@ -20,7 +16,7 @@ const Chatbot = () => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    const userMsg = formData.get("userMsg");
+    const userMsg = formData.get(chatbotData?.inputField?.name);
     setChat((prevChat: any) => [...prevChat, { user: "user", msg: userMsg }]);
     const payload = { msg: userMsg };
     try {
@@ -49,9 +45,9 @@ const Chatbot = () => {
       <div className={`${style.chatbot} ${open ? style.active : ""}`}>
         <div className={style.chatbotHeader}>
           <div className={style.heading}>
-            <h2>Chat with Zeus</h2>
+            <h2>{chatbotData?.heading}</h2>
           </div>
-          <img onClick={handleToggle} src="/svg/close.svg" alt="" />
+          <img onClick={handleToggle} src={chatbotData?.closeBtn} alt="close" />
         </div>
         <div className={style.chatSection} ref={chatSectionRef}>
           {chat.map((msg, index) => (
@@ -61,20 +57,20 @@ const Chatbot = () => {
           ))}
         </div>
         <form className={style.inputBox} onSubmit={handleSubmit}>
-          <FloatingInput label={"Ask something"} name="userMsg" />
+          <FloatingInput
+            label={chatbotData?.inputField?.label}
+            name={chatbotData?.inputField?.name}
+          />
           <Button type="submit">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/60/60525.png"
-              alt=""
-            />
+            <img src={chatbotData?.btnImg} alt="" />
           </Button>
         </form>
       </div>
       <img
         onClick={handleToggle}
         className={`${style.chatbotBtn} ${!open ? style.active : ""}`}
-        src="https://us.123rf.com/450wm/nada01/nada012303/nada01230303482/201202892-robot-logo-images-illustration-design.jpg?ver=6"
-        alt=""
+        src={chatbotData?.chatBotIcon}
+        alt="icon"
       />
     </>
   );
