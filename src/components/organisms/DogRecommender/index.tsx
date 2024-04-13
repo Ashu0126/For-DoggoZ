@@ -39,10 +39,15 @@ const DogRecommender = (props: any) => {
 
   return (
     <FormLayout
-      result={result?.recommendedBreed}
       shift={shift}
       setShift={setShift}
       pageData={pageData}
+      result={
+        <div className={style.result}>
+          <h2>{pageData?.resultSection?.heading}</h2>
+          <h3>{result?.recommendedBreed}</h3>
+        </div>
+      }
     >
       <div className={style.vetForm}>
         <div className={style.head}>

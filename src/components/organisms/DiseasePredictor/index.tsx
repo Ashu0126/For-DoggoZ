@@ -37,10 +37,25 @@ const DiseasePredictor = (props: any) => {
 
   return (
     <FormLayout
-      result={result?.name + " : " + result?.description}
       shift={shift}
       setShift={setShift}
       pageData={pageData}
+      result={
+        <div className={style.result}>
+          <div>
+            <h2>{pageData?.resultSection?.heading}</h2>
+            <h3>{result?.name}</h3>
+          </div>
+          <div>
+            <h2>{pageData?.resultSection?.descHeading}</h2>
+            <h3>{result?.description}</h3>
+          </div>
+          <div>
+            <h2>{pageData?.resultSection?.dietHeading}</h2>
+            <h3>{result?.diet}</h3>
+          </div>
+        </div>
+      }
     >
       <div className={style.vetForm}>
         <div className={style.head}>

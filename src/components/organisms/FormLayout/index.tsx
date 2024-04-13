@@ -27,10 +27,7 @@ const FormLayout = (props: any) => {
               <Button onClick={() => setShift(!shift)}>
                 <img src={pageData?.resultSection?.btnIcon} alt="" />
               </Button>
-              <div className={style.result}>
-                <h2>{pageData?.resultSection?.heading}</h2>
-                <h3>{result}</h3>
-              </div>
+              {result}
             </div>
           )}
         </div>

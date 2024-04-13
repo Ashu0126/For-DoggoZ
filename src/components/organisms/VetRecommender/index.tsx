@@ -34,10 +34,15 @@ const VetRecommender = (props: any) => {
 
   return (
     <FormLayout
-      result={result?.nearestVet}
       shift={shift}
       setShift={setShift}
       pageData={pageData}
+      result={
+        <div className={style.result}>
+          <h2>{pageData?.resultSection?.heading}</h2>
+          <h3>{result?.nearestVet}</h3>
+        </div>
+      }
     >
       <div className={style.vetForm}>
         <div className={style.head}>
