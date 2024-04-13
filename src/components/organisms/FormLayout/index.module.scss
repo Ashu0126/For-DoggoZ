@@ -25,7 +25,6 @@
     .formContainer {
       width: 100%;
       display: flex;
-      justify-content: center;
       flex-direction: column;
       gap: 1.5rem;
       width: 50%;
@@ -63,17 +62,6 @@
             width: 1.5rem;
             height: 1.5rem;
             filter: invert(1);
-          }
-        }
-
-        .result {
-          margin-top: 0.25rem;
-          h2 {
-            margin-bottom: 1rem;
-          }
-          h3 {
-            font-size: 2rem;
-            color: $label-color;
           }
         }
       }
