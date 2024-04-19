@@ -10,6 +10,7 @@ import Modal from "../../atoms/Modal";
 import FloatingInput from "../../atoms/FloatingInput";
 import { fetchResult } from "@/src/utils/fetchApi";
 import Chatbot from "../../molecules/Chatbot";
+import WebSiteLoader from "../WebSiteLoader";
 
 const Home = (props: any) => {
   const { pageData, navData } = props;
@@ -22,6 +23,7 @@ const Home = (props: any) => {
   } = pageData;
 
   const [openModal, setOpenModal] = useState<boolean>(false);
+  const [loading, setLoading] = useState(true);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -49,41 +51,51 @@ const Home = (props: any) => {
 
   return (
     <>
-      <Chatbot />
-      <div className={style.heroBanner}>
-        <Navbar navData={navData} />
-        <div className={style.content}>
-          <h3>{heroSection?.name}</h3>
-          <h1>{heroSection?.mainHead}</h1>
-          <p>{heroSection?.quote}</p>
-          <div className={style.btnContainer}>
-            <Button>
-              <a href="#helper">{heroSection?.buttons?.[0]}</a>
-            </Button>
-            <Button variant={"outline"} onClick={toggleModal}>
-              {heroSection?.buttons?.[1]}
-            </Button>
+      {loading ? (
+        <WebSiteLoader setLoading={setLoading} />
+      ) : (
+        <>
+          <Chatbot />
+          <div className={style.heroBanner}>
+            <Navbar navData={navData} />
+            <div className={style.content}>
+              <h3>{heroSection?.name}</h3>
+              <h1>{heroSection?.mainHead}</h1>
+              <p>{heroSection?.quote}</p>
+              <div className={style.btnContainer}>
+                <Button>
+                  <a href="#helper">{heroSection?.buttons?.[0]}</a>
+                </Button>
+                <Button variant={"outline"} onClick={toggleModal}>
+                  {heroSection?.buttons?.[1]}
+                </Button>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <WhyUs sectionData={whyUsSection} />
-      <Service sectionData={serviceSection} />
-      <div className={style.background}></div>
-      <Helper helperData={helperSection} />
-      <Modal show={openModal} hide={toggleModal} close={modalForm?.closeIcon}>
-        <div className={style.modalForm}>
-          <h4>{modalForm?.heading}</h4>
-          <p>{modalForm?.subHeading}</p>
-          <form onSubmit={handleSubmit}>
-            {modalForm?.inputFields?.map((input: any, index: number) => (
-              <Fragment key={index}>
-                <FloatingInput label={input?.label} name={input?.name} />
-              </Fragment>
-            ))}
-            <Button type={"submit"}>{modalForm?.btnText}</Button>
-          </form>
-        </div>
-      </Modal>
+          <WhyUs sectionData={whyUsSection} />
+          <Service sectionData={serviceSection} />
+          <div className={style.background}></div>
+          <Helper helperData={helperSection} />
+          <Modal
+            show={openModal}
+            hide={toggleModal}
+            close={modalForm?.closeIcon}
+          >
+            <div className={style.modalForm}>
+              <h4>{modalForm?.heading}</h4>
+              <p>{modalForm?.subHeading}</p>
+              <form onSubmit={handleSubmit}>
+                {modalForm?.inputFields?.map((input: any, index: number) => (
+                  <Fragment key={index}>
+                    <FloatingInput label={input?.label} name={input?.name} />
+                  </Fragment>
+                ))}
+                <Button type={"submit"}>{modalForm?.btnText}</Button>
+              </form>
+            </div>
+          </Modal>
+        </>
+      )}
     </>
   );
 };
