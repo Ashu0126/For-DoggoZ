@@ -10,8 +10,10 @@ const VetRecommender = (props: any) => {
   const { pageData } = props;
   const [result, setResult] = useState<any>({});
   const [shift, setShift] = useState<boolean>(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e: any) => {
+    setLoading(true);
     e.preventDefault();
     const formData = new FormData(e.target);
     const payload = {
@@ -27,6 +29,7 @@ const VetRecommender = (props: any) => {
 
       getVet.then((a) => {
         setResult(a);
+        setLoading(false);
         setShift(!shift);
       });
     }
@@ -56,7 +59,9 @@ const VetRecommender = (props: any) => {
                 <FloatingInput label={input?.label} name={input?.name} />
               </Fragment>
             ))}
-          <Button type="submit">{pageData?.formData?.btnText}</Button>
+          <Button loading={loading} type="submit">
+            {pageData?.formData?.btnText}
+          </Button>
         </form>
       </div>
     </FormLayout>

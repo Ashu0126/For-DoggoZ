@@ -9,9 +9,11 @@ const Helper = (props: any) => {
   const { helperData } = props;
 
   const [peopleData, setPeopleData] = useState([]);
+  const [loading, setLoading] = useState(false);
   const [open, setOpen] = useState(false);
 
   const handleSubmit = (e: any) => {
+    setLoading(true);
     e.preventDefault();
     const formData = new FormData(e.target);
     const payload = {
@@ -24,6 +26,7 @@ const Helper = (props: any) => {
     ).then((res) => {
       setPeopleData(res);
       setOpen(true);
+      setLoading(false);
     });
   };
 
@@ -40,7 +43,9 @@ const Helper = (props: any) => {
             label={helperData?.form?.inputField?.label}
             name={helperData?.form?.inputField?.name}
           />
-          <Button type="submit">{helperData?.form?.btnText}</Button>
+          <Button loading={loading} type="submit">
+            {helperData?.form?.btnText}
+          </Button>
         </form>
       </div>
       <Modal

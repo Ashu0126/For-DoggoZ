@@ -56,8 +56,9 @@
 
         button {
           @include flex-center;
-          padding: 0.5rem;
+          padding: 0.5rem 0.7rem;
           border-radius: 50%;
+          min-width: max-content;
           img {
             width: 1.5rem;
             height: 1.5rem;
