@@ -24,8 +24,10 @@ const Home = (props: any) => {
 
   const [openModal, setOpenModal] = useState<boolean>(false);
   const [loading, setLoading] = useState(true);
+  const [btnLoader, setBtnLoader] = useState(false);
 
   const handleSubmit = (e: any) => {
+    setBtnLoader(true);
     e.preventDefault();
     const formData = new FormData(e.target);
 
@@ -41,6 +43,7 @@ const Home = (props: any) => {
     ).then((res) => {
       if (res?.status === "success") {
         toggleModal();
+        setBtnLoader(false);
       }
     });
   };
@@ -90,7 +93,9 @@ const Home = (props: any) => {
                     <FloatingInput label={input?.label} name={input?.name} />
                   </Fragment>
                 ))}
-                <Button type={"submit"}>{modalForm?.btnText}</Button>
+                <Button loading={btnLoader} type={"submit"}>
+                  {modalForm?.btnText}
+                </Button>
               </form>
             </div>
           </Modal>

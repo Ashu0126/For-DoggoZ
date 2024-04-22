@@ -3,13 +3,22 @@
 
 .btn {
   @include to-rem(border-radius, 5);
+  @include flex-center;
   @include border;
   font-size: 0.95rem;
   font-weight: $font-semibold;
   padding: 0.5rem 1rem;
+  min-width: 8rem;
+  height: 2.75rem;
 
   &:hover {
     filter: brightness(90%);
+  }
+
+  img {
+    width: 2rem;
+    height: 1rem;
+    object-fit: cover;
   }
 }
 
