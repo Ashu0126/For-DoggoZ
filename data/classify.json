@@ -1,0 +1,27 @@
+{
+  "logo": {
+    "icon": "/svg/logo.svg",
+    "text": "ForDoggoZ"
+  },
+  "formData": {
+    "heading": "Get the breed name",
+    "subHeading": "Fill the form below.",
+    "inputs": [{ "label": "Drop the dog's image", "name": "image" }],
+    "btnText": "Classify the breed"
+  },
+  "resultSection": {
+    "heading": "The ",
+    "btnIcon": "/svg/backArrow.svg"
+  },
+  "carousel": [
+    { "image": "/img/dog-vet.jpg", "alt": "Slide1" },
+    {
+      "image": "https://christownanimalhospital.com/wp-content/uploads/Lab_Phoenix-AZ-e1695237607708.jpg",
+      "alt": "Slide2"
+    },
+    {
+      "image": "https://img.freepik.com/premium-photo/puppy-dog-border-collie-paws-stethoscope-isolated-blue-surface-little-dog-reception-veterinary-doctor-vet-clinic-pet-health-care-animals-concept_80942-1537.jpg?w=740",
+      "alt": "Slide3"
+    }
+  ]
+}
