@@ -1,32 +1,29 @@
 "use client";
+import React, { useState } from "react";
 import { fetchResult } from "@/src/utils/fetchApi";
-import React, { Fragment, useState } from "react";
-import FormLayout from "../FormLayout";
 import style from "./index.module.scss";
-import FloatingInput from "../../atoms/FloatingInput";
-import Button from "../../atoms/Button";
+import FormLayout from "@/src/components/organisms/FormLayout";
+import FloatingInput from "@/src/components/atoms/FloatingInput";
+import Button from "@/src/components/atoms/Button";
 
-const DiseasePredictor = (props: any) => {
+const BreedClassifier = (props: any) => {
   const { pageData } = props;
   const [result, setResult] = useState<any>({});
   const [shift, setShift] = useState<boolean>(false);
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = (e: any) => {
     setLoading(true);
     e.preventDefault();
     const formData = new FormData(e.target);
     const payload = {
-      symptoms: [
-        formData.get("symtom1"),
-        formData.get("symtom2"),
-        formData.get("symtom3"),
-      ],
+      city: formData.get("city"),
+      sector: Number(formData.get("sector")),
     };
 
-    if (payload.symptoms) {
+    if (payload.city && payload.sector) {
       const getVet = fetchResult(
-        "https://fordoggoz.pythonanywhere.com/disease-prediction",
+        "https://fordoggoz.pythonanywhere.com/vet-recommendation",
         payload
       );
 
@@ -45,18 +42,8 @@ const DiseasePredictor = (props: any) => {
       pageData={pageData}
       result={
         <div className={style.result}>
-          <div>
-            <h2>{pageData?.resultSection?.heading}</h2>
-            <h3>{result?.name}</h3>
-          </div>
-          <div>
-            <h2>{pageData?.resultSection?.descHeading}</h2>
-            <h3>{result?.description}</h3>
-          </div>
-          <div>
-            <h2>{pageData?.resultSection?.dietHeading}</h2>
-            <h3>{result?.diet}</h3>
-          </div>
+          <h2>{pageData?.resultSection?.heading}</h2>
+          <h3>{result?.nearestVet}</h3>
         </div>
       }
     >
@@ -68,9 +55,11 @@ const DiseasePredictor = (props: any) => {
         <form onSubmit={handleSubmit}>
           {!shift &&
             pageData?.formData?.inputs?.map((input: any) => (
-              <Fragment key={input?.name}>
-                <FloatingInput label={input?.label} name={input?.name} />
-              </Fragment>
+              <input
+                key={input?.name}
+                type="file"
+                accept="image/png, image/gif, image/jpeg"
+              />
             ))}
           <Button loading={loading} type="submit">
             {pageData?.formData?.btnText}
@@ -81,4 +70,4 @@ const DiseasePredictor = (props: any) => {
   );
 };
 
-export default DiseasePredictor;
+export default BreedClassifier;
